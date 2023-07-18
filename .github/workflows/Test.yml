@@ -9,10 +9,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: set echoing of commands on and off
-        run: |
-          echo '::set-output name=demo_action_echoing::off'
-          echo '::echo::on'
-          echo '::set-output name=demo_action_echoing::on’
-          echo '::echo::off'
-          echo '::set-output name=action_echo::disabled'
+      - uses: actions/checkout@v3
+      - name: demo workflow job
+        run: echo This is a demo start workflow
