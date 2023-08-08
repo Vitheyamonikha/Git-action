@@ -23,7 +23,7 @@ jobs:
       uses: NuGet/setup-nuget@v1.0.2
      
     - name: Restore NuGet Packages
-      run: nuget restore RestFulAPI_Legasuite/Publish
+      run: nuget restore RestFulAPI_Legasuite/RestFulAPI_Legasuite.sln
  
     - name: Build and Publish Web App
       run: msbuild RestFulAPI_Legasuite/Publish /p:Configuration=Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile
