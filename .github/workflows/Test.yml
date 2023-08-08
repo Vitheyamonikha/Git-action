@@ -26,7 +26,7 @@ jobs:
       run: nuget restore RestFulAPI_Legasuite/RestFulAPI_Legasuite.sln
  
     - name: Build and Publish Web App
-      run: msbuild RestFulAPI_Legasuite/Publish /p:Configuration=Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile
+      run: msbuild RestFulAPI_Legasuite/RestFulAPI_Legasuite.sln /p:Configuration=Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile
  
     - name: Upload Artifact
       uses: actions/upload-artifact@v1.0.0
