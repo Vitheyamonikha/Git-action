@@ -55,7 +55,7 @@ jobs:
       - name: Copy folder content recursively to remote
         uses: garygrossgarten/github-action-scp@release
         with:
-          local: C:\Users\UTIS LAPTOP 252\Downloads\GitActionsYamlFile.txt
+          local: C:\\Users/UTIS LAPTOP 252/Downloads/GitActionsYamlFile.txt
           remote: \USNYMEQARKTMX2/TestFolder
           host: https://rktmx.qa.henryschein.com
           username: VMONI1
