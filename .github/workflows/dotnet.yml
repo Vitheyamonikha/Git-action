@@ -57,6 +57,6 @@ jobs:
         with:
           local: C:\\Users/UTIS LAPTOP 252/Downloads/GitActionsYamlFile.txt
           remote: \USNYMEQARKTMX2/TestFolder
-          host: https://rktmx.qa.henryschein.com
+          host: USNYMEQARKTMX2
           username: VMONI1
           password: Network@3
