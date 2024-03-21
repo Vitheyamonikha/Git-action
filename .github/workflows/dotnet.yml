@@ -12,14 +12,9 @@ jobs:
     runs-on:
       - ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-        name: Checkout Code
-      - name: Copy folder content recursively to remote
-        uses: garygrossgarten/github-action-scp@release
-        with:
-          local: "C:\\Users\\UTIS LAPTOP 252\\Downloads"
-          remote: "\\USNYMEQARKTMX2\\TestFolder"
-          host: "USNYMEQARKTMX2"
-          username: "VMONI1"
-          password: "Network@3"
+            - uses: actions/checkout@v4
+            # Make sure the @v0.9.0 matches the current version of the action
+            - uses: webfactory/ssh-agent@v0.9.0
+              with:
+                  ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
           
