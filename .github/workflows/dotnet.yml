@@ -18,7 +18,7 @@ jobs:
           touch test/oof.txt
           touch test/.dot.txt
       - name: checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v1
       - name: Copy folder content recursively to remote
         uses: ./.github/workflows/dotnet.yml/
         with:
