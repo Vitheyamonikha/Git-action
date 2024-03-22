@@ -12,13 +12,13 @@ jobs:
     runs-on:
       - ubuntu-latest
     steps:
-      - name: checkout
-        uses: actions/checkout@v2
       - name: setup demo
         run: |
           mkdir test
           touch test/oof.txt
           touch test/.dot.txt
+      - name: checkout
+        uses: actions/checkout@v2
       - name: Copy folder content recursively to remote
         uses: ./.github/workflows/dotnet.yml/
         with:
