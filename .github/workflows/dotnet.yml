@@ -12,9 +12,19 @@ jobs:
     runs-on:
       - ubuntu-latest
     steps:
-            - uses: actions/checkout@v4
-            # Make sure the @v0.9.0 matches the current version of the action
-            - uses: webfactory/ssh-agent@v0.9.0
-              with:
-                  ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-          
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: setup demo
+        run: |
+          mkdir test
+          touch test/oof.txt
+          touch test/.dot.txt
+      - name: Copy folder content recursively to remote
+        uses: ./
+        with:
+          local: test
+          remote: scp/directory
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.PASSWORD }}
+          privateKey: ${{ secrets.PRIVATE_KEY}}
