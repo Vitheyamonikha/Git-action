@@ -20,7 +20,7 @@ jobs:
           touch test/oof.txt
           touch test/.dot.txt
       - name: Copy folder content recursively to remote
-        uses: ./.github/workflows/dotnet.yml
+        uses: ./.github/workflows/dotnet.yml/
         with:
           local: test
           remote: scp/directory
