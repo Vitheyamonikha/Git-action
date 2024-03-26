@@ -8,56 +8,18 @@ on:
     branches:
       - main
 jobs:
-  build:
-    runs-on:
-      - windows-latest
-    steps:
-      - uses: actions/checkout@v2
-        name: Checkout Code
-      - name: Setup MSBuild
-        uses: microsoft/setup-msbuild@v1.1
-      - name: Setup NuGet.exe for use with actions
-        uses: NuGet/setup-nuget@v1.2.0
-      - name: Restore NuGet Packages
-        run: nuget restore RestFulAPI_Legasuite/RestFulAPI_Legasuite.sln
-      - name: Remove Upload Artifact Folder
-        uses: JesseTG/rm@v1.0.3
-        with:
-          path: ./_build
-      - name: Remove Download Artifact Folder
-        uses: JesseTG/rm@v1.0.3
-        with:
-          path: ./_artifacts
-      - name: Build Solution
-        run: >
-          msbuild.exe RestFulAPI_Legasuite/RestFulAPI_Legasuite.sln /nologo /nr:false
-          /p:DeployOnBuild=true /p:DeployDefaultTarget=WebPublish
-          /p:WebPublishMethod=FileSystem /p:DeleteExistingFiles=True
-          /p:platform="Any CPU" /p:configuration="Release"
-          /p:PublishUrl="../_build"
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: published_webapp
-          path: ./_build
-      - name: Download a Build Artifact
-        uses: actions/download-artifact@v3.0.0
-        with:
-          name: published_webapp
-          path: ./_artifacts
   Deploy:
     runs-on:
       - ubuntu-latest
-    needs: build
     steps:
       - uses: actions/checkout@v2
         name: Checkout Code
       - name: Copy folder content recursively to remote
         uses: garygrossgarten/github-action-scp@release
         with:
-          local: ./_artifacts
-          remote: \USNYMEQARKTMX2/TestFolder
+          local: ./.github
+          remote: \\USNYMEQARKTMX2\\TestAgain
           host: USNYMEQARKTMX2
-          username: VMONI1
-          password: Network@3
+          username: USHSI\VITHEYA.MONIKHA
+          password: Passwordforhs@9595
           privateKey: ${{ secrets.PRIVATE_KEY}}
