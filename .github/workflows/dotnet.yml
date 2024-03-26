@@ -22,4 +22,3 @@ jobs:
           host: 10.80.77.63
           username: USHSI\VITHEYA.MONIKHA
           password: Passwordforhs@9595
-          privateKey: ${{ secrets.PRIVATE_KEY}}
