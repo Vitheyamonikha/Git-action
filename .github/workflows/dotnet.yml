@@ -15,7 +15,7 @@ jobs:
     - name: executing remote ssh commands using password
       uses: appleboy/ssh-action@v1.0.3
       with:
-        host: USNYMEQARKTMX2
+        host: 10.80.77.63
         username: USHSI\VITHEYA.MONIKHA
         password: Passwordforhs@9595
         port: 22
