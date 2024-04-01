@@ -12,11 +12,8 @@ jobs:
     runs-on:
       - ubuntu-latest
     steps:
-    - name: Action SSH
-      uses: tiyee/action-ssh@release
-      with:
-          host: USNYMEQARKTMX2
-          port: 22
-          username: USHSI\VITHEYA.MONIKHA
-          privateKey: ${{ secrets.PRIVATE_KEY }} 
-          command: 'ls -alh'
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: Perform a Pester test from the command-line
+        shell: pwsh
+        run: Test-NetConnection -ComputerName USNYMEQARKTMX2 -Port 22
