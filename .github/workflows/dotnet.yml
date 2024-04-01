@@ -16,4 +16,5 @@ jobs:
         uses: actions/checkout@v4
       - name: Perform a Pester test from the command-line
         shell: pwsh
-        run: Test-NetConnection -ComputerName USNYMEQARKTMX2 -Port 22
+        run:  |
+          Test-NetConnection -ComputerName USNYMEQARKTMX2 -Port 22
