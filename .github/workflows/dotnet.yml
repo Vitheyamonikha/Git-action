@@ -10,7 +10,7 @@ on:
 jobs:
   Deploy:
     runs-on:
-      - ubuntu-latest
+      - self-hosted
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
